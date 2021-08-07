@@ -1,21 +1,24 @@
 import React from 'react'
 import {Card} from "react-bootstrap";
 import Rating from "./Rating";
+import {Link} from "react-router-dom";
 
 function Product(props){
     return (
         <div>
             <Card className="m-3 p-3 rounded">
-                <a href={`/product/${props.product._id}`}>
+                <Link to={`/product/${props.product._id}`}>
                     <Card.Img src={props.product.image} variant="top" >
                     </Card.Img>
-                </a>
+                </Link>
             
             <Card.Body>
                     <Card.Title as='div'>
+                        <Link to={`/product/${props.product._id}`}>
                         <strong>
                             {props.product.name}
                         </strong>
+                        </Link>
                     </Card.Title>
             </Card.Body>
             <Card.Text as="div">
@@ -29,7 +32,9 @@ function Product(props){
                     </Card.Title>
             </Card.Text>
             <Card.Text as="h3" className="ms-2">
+                <Link to={`/product/${props.product._id}`}>
                 $ {props.product.price}
+                    </Link>
             </Card.Text>
             </Card>
         </div>
