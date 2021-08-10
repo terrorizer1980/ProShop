@@ -18,9 +18,7 @@ function App() {
           <Route exact path="/">
             <Homescreen />
           </Route>
-          <Route path="/product/:id" >
-            <Productscreen />
-          </Route>
+              <Route path="/product/:id" render={(props) => <Productscreen {...props} />} />
         </Switch>
       </Container >
     </main>
